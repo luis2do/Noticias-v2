@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Angular App</title>
+  </head>
+  <body>
+  <div class="container">
+   <div class="panel panel-primary">
+      <div class="panel-heading">Publicar Noticia</div>
+      <div class="panel-body">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label class="control-label">Titulo</label>
+                  <input type="text" class="form-control" name="NoticiaTitulo" id="nTitulo">
+               </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Publicar en:</label><br>
+                  <div class= "top-space">
+                  <select id="nCombobox">
+                    <option value="General">General</option>
+                    <option value="Maestros">Maestros</option>
+                  </select>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label class="control-label">Descripción</label>
+                  <textarea id = "nDescText" class="form-control" rows = "5" cols = "80"></textarea>
+               </div>
+            </div>
+            <div class='col-md-6'>
+               <div class="form-group">
+                  <div class='input-group date' id='datetimepicker1'>
+                      <label class="control-label">Fecha:</label><br>
+                      <input type="date" id="nFecha" name="NoticiaFecha">
+                  </div>
+               </div>
+            </div>
+            <div class= "row">
+            <div class='image-center-space'>
+               <div class="form-group">
+                  <input type="file" id="nImagen" name="nImagen">
+                  <div class="image-preview" id = "nImagenPreview">
+                    <img src="" alt="Image Preview" class="image-preview__image">
+                    <span class="image-preview__default-text">Image Preview</span>
+            </div>
+            <script>
+            const nImagen = document.getElementById("nImagen");
+            const previewContainer = document.getElementById("nImagenPreview");
+            const previewImage = previewContainer.querySelector(".image-preview__image");
+            const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
+
+            nImagen.addEventListener("change", function(){
+                const file = this.files[0];
+
+                if(file){
+                  const reader = new FileReader();
+
+                  previewDefaultText.style.display = "none";
+                  previewImage.style.display = "block";
+
+                  reader.addEventListener("load", function(){
+                     console.log(this);
+                     previewImage.setAttribute("src", this.result);
+                  });
+
+                  reader.readAsDataURL(file);
+                }
+            });
+          </script>
+        <br></br>
+        </div>
+               </div>
+            </div>
+         </div>
+         <input type="submit" class="btn btn-primary" value="Submit">
+      </div>
+   </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">//Includes</script> 
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+  </body>
+</html>
