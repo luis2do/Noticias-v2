@@ -28,13 +28,17 @@ divBoton {
 
 .image-center-space{
           /*top, right, bottom, left*/
-  padding: 100px 0px 0px 600px;
+  padding: 0px 0px 0px 10px;
+}
+.selecfile
+{
+  padding: 0px 0px 0px 10px;
 }
 
 .container {
-margin-top: 40px;
+height: 100%;
+padding-top: 15px;
 }
-
 .btn-primary {
 			width: 100%;
 }

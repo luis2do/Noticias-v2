@@ -21,6 +21,10 @@
                   <select id="nCombobox">
                     <option value="General">General</option>
                     <option value="Maestros">Maestros</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Eventos">Eventos</option>
+                    <option value="Calificaciones">Calificaciones</option>
+                    <option value="Programas">Programas</option>
                   </select>
                   </div>
                </div>
@@ -34,13 +38,13 @@
                </div>
             </div>
             <div class='col-md-6'>
+      <div class="columna2">
                <div class="form-group">
                   <div class='input-group date' id='datetimepicker1'>
                       <label class="control-label">Fecha:</label><br>
                       <input type="date" id="nFecha" name="NoticiaFecha">
                   </div>
                </div>
-            </div>
             <div class= "row">
             <div class='image-center-space'>
                <div class="form-group">
@@ -49,10 +53,17 @@
                   <div class="image-preview" id = "nImagenPreview">
                     <img src="" alt="Image Preview" class="image-preview__image">
                     <span class="image-preview__default-text">Image Preview</span>
+                  </div>
+               </div>
             </div>
-            <div class="form-group">
-              <label>Seleccione una Archivo</label>
-                  <input type="file" id="nImagen" name="nImagen">
+        <div class="form-group">
+        <div class="Row">
+          <div class="selecfile">
+         <label>Seleccione una Archivo</label>
+         <input type="file" id="nImagen" name="nImagen">
+          </div>
+        </div>
+        </div>
             <script>
             const nImagen = document.getElementById("nImagen");
             const previewContainer = document.getElementById("nImagenPreview");
@@ -79,11 +90,13 @@
           </script>
         <br></br>
         </div>
+      </div>
                </div>
             </div>
          </div>
-         <input type="submit" class="btn btn-primary" value="Submit">
-      </div>
+
+      <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
    </div>
 </div>
 
